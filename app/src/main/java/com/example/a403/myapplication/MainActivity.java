@@ -4,54 +4,88 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import static com.example.a403.myapplication.R.id.radioButton;
 
-        EditText num1,num2, sum ;
-        Button pls, mia, gop, nau;
-        double a, b, c = 0;
-        View.OnClickListener cl;
+public class MainActivity extends AppCompatActivity {
+    Switch S1;
+    LinearLayout L1;
+    RadioGroup R1;
+    RadioButton RB1, RB2, RB3;
+    ImageView I1;
+    Button B1, B2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        num1 = (EditText) findViewById(R.id.num1);
-        num2 = (EditText) findViewById(R.id.num2);
-        pls = (Button) findViewById(R.id.pls);
-        mia = (Button) findViewById(R.id.mia);
-        gop = (Button) findViewById(R.id.gop);
-        nau = (Button) findViewById(R.id.nau);
-        sum = (EditText) findViewById(R.id.sum);
 
-        cl = new  View.OnClickListener() {
-            public void onClick(View v) {
-                a = Double.parseDouble(num1.getText().toString());
-                b = Double.parseDouble(num2.getText().toString());
+        S1 = (Switch) findViewById(R.id.switch1);
+        L1 = (LinearLayout) findViewById(R.id.activity_main);
+        R1 = (RadioGroup) findViewById(R.id.RG);
+        RB1 = (RadioButton) findViewById(R.id.radioButton);
+        RB2 = (RadioButton) findViewById(R.id.radioButton2);
+        RB3 = (RadioButton) findViewById(R.id.radioButton3);
+        I1 = (ImageView) findViewById(R.id.imageView);
+        B1 = (Button) findViewById(R.id.button3);
+        B2 = (Button) findViewById(R.id.button4);
 
-                switch (v.getId()){
-                    case R.id.pls :
-                        c=a+b;
-                        break;
-                    case R.id.mia :
-                        c=a-b;
-                        break;
-                    case R.id.gop :
-                        c=a*b;
-                        break;
-                    case R.id.nau :
-                        c=a/b;
-                        break;
-                }
-                sum.setText("계산결과" + c);
+        S1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked == true)
+                    L1.setVisibility(View.VISIBLE);
+                else
+                    L1.setVisibility(View.INVISIBLE);
             }
-        };
-         pls.setOnClickListener(cl);
-         mia.setOnClickListener(cl);
-         gop.setOnClickListener(cl);
-         nau.setOnClickListener(cl);
+        });
+        RB1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    I1.setImageResource(R.drawable.jel);
+            }
+        });
+        RB2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    I1.setImageResource(R.drawable.kit);
+            }
+        });
+        RB3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    I1.setImageResource(R.drawable.rol);
+            }
+        });
+
+        B1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "종료합니다.", Toast.LENGTH_SHORT).show();
+
+                finish();
+            }
+        });
+
+        B2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                S1.setChecked(false);
+                L1.setVisibility(View.INVISIBLE);
+                Toast.makeText(getApplicationContext(),"처음으로 돌아갑니다.",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
