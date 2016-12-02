@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 CM.setBase(SystemClock.elapsedRealtime());
                 CM.start();
+                CM.setTextColor(Color.RED);
             }
         });
     }
