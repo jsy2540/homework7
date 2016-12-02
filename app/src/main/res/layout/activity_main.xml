@@ -17,8 +17,8 @@
     <Chronometer
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/chronometer2"
-        android:text="예약에 걸린 시간 : %s"
+        android:id="@+id/chronometer"
+        android:format="예약에 걸린 시간 : %s"
         android:gravity="center"/>
 
     <Button
@@ -29,22 +29,19 @@
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:layout_weight="0.48">
+        android:layout_height="wrap_content">
 
         <RadioButton
             android:text="날짜 설정(캘런더뷰)"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton2"
-            android:layout_weight="1" />
+            android:id="@+id/radioButton2" />
 
         <RadioButton
             android:text="시간 설정"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton"
-            android:layout_weight="1" />
+            android:id="@+id/radioButton" />
     </RadioGroup>
 
     <FrameLayout
@@ -53,22 +50,22 @@
 
         <CalendarView
             android:layout_width="match_parent"
-            android:layout_height="300dp"
             android:id="@+id/calendarView"
-            android:layout_weight="0.21" />
+            android:layout_weight="0.21"
+            android:layout_height="wrap_content" />
 
         <TimePicker
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
             android:id="@+id/timePicker"
-            android:visibility="invisible"/>
+            android:visibility="invisible"
+            android:layout_height="wrap_content" />
 
     </FrameLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="63dp">
+        android:layout_height="wrap_content">
 
         <Button
             android:text="예약완료"

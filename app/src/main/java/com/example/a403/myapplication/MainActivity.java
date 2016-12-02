@@ -1,5 +1,7 @@
 package com.example.a403.myapplication;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        B1 = (Button) findViewById(R.id.button);      // 예약시작 버튼
+        B1 = (Button) findViewById(R.id.button);
         B2 = (Button) findViewById(R.id.button2);
         RB1 = (RadioButton) findViewById(R.id.radioButton);
         RB2 = (RadioButton) findViewById(R.id.radioButton2);
@@ -45,14 +47,9 @@ public class MainActivity extends AppCompatActivity {
         B1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-        }
+                CM.setBase(SystemClock.elapsedRealtime());
+                CM.start();
+            }
         });
-
-
-
-
-
-
     }
 }
