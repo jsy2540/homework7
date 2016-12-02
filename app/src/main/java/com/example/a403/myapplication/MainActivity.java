@@ -52,5 +52,13 @@ public class MainActivity extends AppCompatActivity {
                 CM.setTextColor(Color.RED);
             }
         });
+        RB1.setChecked(true);
+        RB1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                CV.setVisibility(View.VISIBLE);
+                TP.setVisibility(View.INVISIBLE);
+            }
+        });
     }
 }
