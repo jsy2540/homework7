@@ -52,6 +52,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/nau" />
 
+    <Button
+        android:text="나머지 값"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mod" />
+
     <EditText
         android:text="계산결과 :"
         android:layout_width="match_parent"
@@ -59,4 +65,5 @@
         android:id="@+id/sum"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="30sp" />
+
 </LinearLayout>

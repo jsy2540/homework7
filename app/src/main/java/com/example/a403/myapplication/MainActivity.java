@@ -10,7 +10,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
         EditText num1,num2, sum ;
-        Button pls, mia, gop, nau;
+        Button pls, mia, gop, nau, mod;
         double a, b, c = 0;
         View.OnClickListener cl;
 
@@ -25,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
         mia = (Button) findViewById(R.id.mia);
         gop = (Button) findViewById(R.id.gop);
         nau = (Button) findViewById(R.id.nau);
+        mod = (Button) findViewById(R.id.mod);
         sum = (EditText) findViewById(R.id.sum);
+
 
         cl = new  View.OnClickListener() {
             public void onClick(View v) {
@@ -45,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nau :
                         c=a/b;
                         break;
+                    case R.id.mod :
+                        c=a%b;
+                        break;
                 }
                 sum.setText("계산결과" + c);
             }
@@ -53,5 +58,6 @@ public class MainActivity extends AppCompatActivity {
          mia.setOnClickListener(cl);
          gop.setOnClickListener(cl);
          nau.setOnClickListener(cl);
+         mod.setOnClickListener(cl);
     }
 }
