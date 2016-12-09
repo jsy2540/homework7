@@ -14,72 +14,25 @@
     tools:context="com.example.a403.myapplication.MainActivity"
     android:weightSum="1">
 
-    <Chronometer
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/chronometer"
-        android:format="예약에 걸린 시간 : %s"
-        android:gravity="center"/>
-
-    <Button
-        android:text="예약시작"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button" />
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:text="날짜 설정(캘런더뷰)"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/radioButton2" />
-
-        <RadioButton
-            android:text="시간 설정"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/radioButton" />
-    </RadioGroup>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <CalendarView
-            android:layout_width="match_parent"
-            android:id="@+id/calendarView"
-            android:layout_weight="0.21"
-            android:layout_height="match_parent" />
-
-        <TimePicker
-            android:layout_width="wrap_content"
-            android:id="@+id/timePicker"
-            android:visibility="invisible"
-            android:layout_height="wrap_content" />
-
-    </FrameLayout>
-
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="40dp">
 
-        <Button
-            android:text="예약완료"
+        <Switch
+            android:text="예약시작"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/button2"
-            android:layout_weight="0.03" />
+            android:layout_height="wrap_content"
+            android:id="@+id/reserve_switch"
+            android:layout_weight="0.17" />
 
-        <TextView
+        <Chronometer
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/textView"
-            android:layout_weight="0.03" />
+            android:layout_height="wrap_content"
+            android:id="@+id/chronometer1"
+            android:layout_weight="1" />
+
     </LinearLayout>
+
 
 </LinearLayout>
