@@ -20,5 +20,6 @@
 <img width=150 src='https://github.com/jsy2540/homework7/blob/master/app/pics/nau.png'>
 <img width=150 src='https://github.com/jsy2540/homework7/blob/master/app/pics/nau2.png'>
 
+나머지
 
 <img width=150 src='https://github.com/jsy2540/homework7/blob/master/app/pics/mop.png'>
